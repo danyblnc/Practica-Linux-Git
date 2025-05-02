@@ -1,40 +1,63 @@
-# Practica-Linux-Git
+# Practica-Linux-Git / Comandos básicos
 
 1. Navegación de directorios
-● Instrucciones: Ve al directorio /etc y luego vuelve a tu directorio personal.
-2. Listar archivos
-● Instrucciones: Lista todos los archivos, incluidos los ocultos, en el directorio actual.
+
+cd /etc           # Ir al directorio /etc
+cd ~              # Volver al directorio personal
+
+2. Listar archivos (incluidos ocultos)
+
+ls -la            # Lista todos los archivos, incluso los ocultos
+
 3. Crear directorios
-● Instrucciones: Crea una carpeta llamada practica_linux y dentro otra llamada
+
+mkdir -p practica_linux/notas   # Crea la carpeta practica_linux y dentro de ella otra llamada notas
+
 4. Crear archivos vacíos
-● Instrucciones: Crea un archivo vacío llamado info.txt dentro de
-practica_linux.
+
+touch practica_linux/info.txt   # Crea un archivo vacío llamado info.txt dentro de practica_linux
+
 5. Editar archivos
-● Instrucciones: Escribe la frase "Hola Linux" en info.txt con echo.
+
+echo "Hola Linux" > practica_linux/info.txt   # Escribe "Hola Linux" en info.txt (sobrescribe si ya existe)
+
 6. Ver el contenido de un archivo
-● Instrucciones: Muestra el contenido de info.txt en pantalla.
+
+cat practica_linux/info.txt    # Muestra el contenido del archivo
+
 7. Eliminar archivos y carpetas
-Instrucciones: Borra el archivo info.txt y luego la carpeta notas.
-● rmdir practica_linux/notas
+
+rm practica_linux/info.txt     # Borra el archivo info.txt
+rmdir practica_linux/notas     # Elimina la carpeta notas (debe estar vacía)
+
 8. Copiar archivos
-● Instrucciones: Copia un archivo del sistema (/etc/hosts) a tu carpeta
-practica_linux.
+
+cp /etc/hosts practica_linux/  # Copia el archivo hosts a la carpeta practica_linux
+
 9. Mover archivos
-● Instrucciones: Mueve el archivo hosts dentro de practica_linux a tu directorio
-personal.
+
+mv practica_linux/hosts ~      # Mueve el archivo hosts a tu directorio personal
+
 10. Buscar archivos
-● Instrucciones: Busca todos los archivos .conf dentro de /etc.
+
+find /etc -type f -name "*.conf"   # Busca todos los archivos .conf dentro de /etc
+
 11. Buscar texto dentro de archivos
-● Objetivo: Filtrar contenido textual.
-● Instrucciones: Busca la palabra "nameserver" en el archivo /etc/resolv.conf.
+
+grep "nameserver" /etc/resolv.conf   # Busca la palabra "nameserver" en el archivo indicado
 
 12. Ver usuarios del sistema
-● Instrucciones: Muestra todos los usuarios registrados en el sistema.
-cat /etc/passwd
+
+cat /etc/passwd   # Muestra todos los usuarios registrados
+
 13. Ver procesos activos
-● Instrucciones: Muestra los procesos que estás ejecutando.
-ps
+
+ps                # Muestra los procesos activos del usuario actual
+
 14. Cambiar permisos de un archivo
-● Instrucciones: Haz que el archivo info.txt sea ejecutable.
+
+chmod +x practica_linux/info.txt   # Hace que el archivo sea ejecutable
+
 15. Ver el historial de comandos
-● Instrucciones: Muestra los últimos comandos que ejecutaste.
+
+history           # Muestra el historial de comandos
